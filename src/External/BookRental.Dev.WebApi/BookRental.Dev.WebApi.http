@@ -1,0 +1,6 @@
+@BookRental.Dev.WebApi_HostAddress = http://localhost:5019
+
+GET {{BookRental.Dev.WebApi_HostAddress}}/
+Accept: application/json
+
+###
