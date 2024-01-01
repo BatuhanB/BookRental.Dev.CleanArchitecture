@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services
     .AddApplicationDependency()
-    .AddInfrastructureDependency();
+    .AddInfrastructureDependency(builder.Configuration);
 
 builder.Host
     .UseSerilog((context, configuration) =>
