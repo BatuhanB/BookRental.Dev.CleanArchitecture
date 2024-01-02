@@ -12,6 +12,7 @@ public class BookConfiguration : IEntityTypeConfiguration<Book>
             .IsRequired();
 
         builder.Property(b => b.PublishDate)
+            .HasColumnType("timestamp without time zone")
             .IsRequired();
 
         builder.HasKey(b => b.Id);
