@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BookRental.Dev.Infrastructure.SeedData
+namespace BookRental.Dev.Infrastructure.Data.SeedData
 {
     public class AuthorSeedData : IEntityTypeConfiguration<Author>
     {

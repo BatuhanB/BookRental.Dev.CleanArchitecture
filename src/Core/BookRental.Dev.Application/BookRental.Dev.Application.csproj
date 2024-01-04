@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\External\BookRental.Dev.Infrastructure\BookRental.Dev.Infrastructure.csproj" />
+    <ProjectReference Include="..\BookRental.Dev.Domain\BookRental.Dev.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
