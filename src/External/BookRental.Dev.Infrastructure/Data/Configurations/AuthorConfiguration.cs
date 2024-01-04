@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BookRental.Dev.Infrastructure.Configurations;
+namespace BookRental.Dev.Infrastructure.Data.Configurations;
 public class AuthorConfiguration : IEntityTypeConfiguration<Author>
 {
     public void Configure(EntityTypeBuilder<Author> builder)

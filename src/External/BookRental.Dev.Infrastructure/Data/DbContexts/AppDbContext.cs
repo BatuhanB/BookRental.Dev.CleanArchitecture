@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace BookRental.Dev.Infrastructure.DbContexts
+namespace BookRental.Dev.Infrastructure.Data.DbContexts
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

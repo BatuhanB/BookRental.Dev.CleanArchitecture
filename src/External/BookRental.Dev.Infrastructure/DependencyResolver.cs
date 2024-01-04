@@ -1,4 +1,4 @@
-﻿using BookRental.Dev.Infrastructure.DbContexts;
+﻿using BookRental.Dev.Infrastructure.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
