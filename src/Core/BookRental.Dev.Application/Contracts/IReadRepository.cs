@@ -1,9 +1,9 @@
-﻿using BookRental.Dev.Domain.Common;
-using BookRental.Dev.Infrastructure.Data.Paging;
+﻿using BookRental.Dev.Application.Contracts.Paging;
+using BookRental.Dev.Domain.Common;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
-namespace BookRental.Dev.Infrastructure.Data.Interfaces
+namespace BookRental.Dev.Application.Contracts
 {
     public interface IReadRepository<T> where T : EntityBase
     {

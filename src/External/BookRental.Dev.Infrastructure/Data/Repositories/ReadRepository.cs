@@ -1,12 +1,13 @@
-﻿using BookRental.Dev.Domain.Common;
-using BookRental.Dev.Infrastructure.Data.Dynamic;
-using BookRental.Dev.Infrastructure.Data.Interfaces;
-using BookRental.Dev.Infrastructure.Data.Paging;
+﻿using BookRental.Dev.Application.Contracts;
+using BookRental.Dev.Application.Contracts.Dynamic;
+using BookRental.Dev.Application.Contracts.Paging;
+using BookRental.Dev.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
-namespace BookRental.Dev.Infrastructure.Data.Repositories.Concretes
+
+namespace BookRental.Dev.Infrastructure.Data.Repositories
 {
     public class ReadRepository<TEntity, TContext> : IReadRepository<TEntity>
         where TEntity : EntityBase
@@ -44,7 +45,7 @@ namespace BookRental.Dev.Infrastructure.Data.Repositories.Concretes
             return await queryable.ToPaginateAsync(index, size, 0, cancellationToken);
         }
 
-        public async Task<IPaginate<TEntity>> GetListByDynamicAsync(Dynamic.Dynamic dynamic,
+        public async Task<IPaginate<TEntity>> GetListByDynamicAsync(Dynamic dynamic,
                                                                     Func<IQueryable<TEntity>,
                                                                             IIncludableQueryable<TEntity, object>>?
                                                                         include = null,

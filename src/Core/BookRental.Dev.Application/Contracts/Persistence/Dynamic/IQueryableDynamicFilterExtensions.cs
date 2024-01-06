@@ -1,7 +1,7 @@
-﻿using System.Text;
-using System.Linq.Dynamic.Core;
+﻿using System.Linq.Dynamic.Core;
+using System.Text;
 
-namespace BookRental.Dev.Infrastructure.Data.Dynamic
+namespace BookRental.Dev.Application.Contracts.Dynamic
 {
     public static class IQueryableDynamicFilterExtensions
     {

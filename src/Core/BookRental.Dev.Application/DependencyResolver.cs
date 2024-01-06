@@ -6,12 +6,13 @@ public static class DependencyResolver
 {
     public static IServiceCollection AddApplicationDependency(this IServiceCollection services)
     {
-        var assembly = typeof(DependencyResolver).Assembly;
+        var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
         services.AddMediatR(conf =>
                 conf.RegisterServicesFromAssembly(assembly));
+        services.AddValidatorsFromAssembly(assembly);        
+        services.AddAutoMapper(assembly);
 
-        services.AddValidatorsFromAssembly(assembly);
         return services;
     }
 }

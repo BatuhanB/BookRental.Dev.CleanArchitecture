@@ -1,4 +1,4 @@
-﻿namespace BookRental.Dev.Infrastructure.Data.Paging
+﻿namespace BookRental.Dev.Application.Contracts.Paging
 {
     public class Paginate<T> : IPaginate<T>
     {

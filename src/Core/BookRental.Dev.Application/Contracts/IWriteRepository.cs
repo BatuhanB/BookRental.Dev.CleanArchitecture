@@ -1,6 +1,6 @@
 ﻿using BookRental.Dev.Domain.Common;
 
-namespace BookRental.Dev.Infrastructure.Data.Repositories.Interfaces
+namespace BookRental.Dev.Application.Contracts
 {
     public interface IWriteRepository<T> where T : EntityBase
     {

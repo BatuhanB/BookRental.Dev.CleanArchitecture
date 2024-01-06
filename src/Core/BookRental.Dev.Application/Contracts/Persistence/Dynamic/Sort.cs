@@ -1,4 +1,4 @@
-﻿namespace BookRental.Dev.Infrastructure.Data.Dynamic
+﻿namespace BookRental.Dev.Application.Contracts.Dynamic
 {
     public class Sort
     {
