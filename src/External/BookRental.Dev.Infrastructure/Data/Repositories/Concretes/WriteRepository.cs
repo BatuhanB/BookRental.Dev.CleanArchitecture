@@ -1,5 +1,5 @@
 ﻿using BookRental.Dev.Domain.Common;
-using BookRental.Dev.Infrastructure.Data.Repositories.Interfaces;
+using BookRental.Dev.Application.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookRental.Dev.Infrastructure.Data.Repositories.Concretes
