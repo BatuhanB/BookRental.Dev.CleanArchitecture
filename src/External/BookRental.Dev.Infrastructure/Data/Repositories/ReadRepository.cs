@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
 
-namespace BookRental.Dev.Infrastructure.Data.Repositories.Concretes
+namespace BookRental.Dev.Infrastructure.Data.Repositories
 {
     public class ReadRepository<TEntity, TContext> : IReadRepository<TEntity>
         where TEntity : EntityBase

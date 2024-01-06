@@ -2,9 +2,9 @@
 using BookRental.Dev.Application.Contracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookRental.Dev.Infrastructure.Data.Repositories.Concretes
+namespace BookRental.Dev.Infrastructure.Data.Repositories
 {
-    public class WriteRepository<TEntity,TContext>:IWriteRepository<TEntity>
+    public class WriteRepository<TEntity, TContext> : IWriteRepository<TEntity>
         where TEntity : EntityBase
         where TContext : DbContext
     {
