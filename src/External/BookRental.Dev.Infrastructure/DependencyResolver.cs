@@ -14,8 +14,7 @@ public static class DependencyResolver
     public static IServiceCollection AddInfrastructureDependency(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")),
-            optionsLifetime: ServiceLifetime.Singleton);
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddScoped<IReadRepository<Book>, ReadRepository<Book, AppDbContext>>();
         services.AddScoped<IWriteRepository<Book>, WriteRepository<Book, AppDbContext>>();

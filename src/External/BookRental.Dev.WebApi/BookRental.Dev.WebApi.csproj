@@ -26,4 +26,8 @@
     <ProjectReference Include="..\BookRental.Dev.Infrastructure\BookRental.Dev.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
 </Project>
