@@ -21,8 +21,4 @@
     <ProjectReference Include="..\BookRental.Dev.Domain\BookRental.Dev.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Book\Command\" />
-  </ItemGroup>
-
 </Project>
