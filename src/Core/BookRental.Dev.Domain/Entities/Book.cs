@@ -31,7 +31,7 @@ public sealed class Book : EntityBase
     public int Stock { get; set; }
     public double Price { get; set; }
     [JsonIgnore]
-    public Author Author { get; set; }
+    public Author? Author { get; set; }
     [JsonIgnore]
     public List<Publisher>? Publishers { get; set; }
 }

@@ -19,6 +19,7 @@ public static class DependencyResolver
         services.AddScoped<IReadRepository<Book>, ReadRepository<Book, AppDbContext>>();
         services.AddScoped<IWriteRepository<Book>, WriteRepository<Book, AppDbContext>>();
         services.AddScoped<IBookReadRepository, BookReadRepository>();
+        services.AddScoped<IBookWriteRepository, BookWriteRepository>();
         return services;
     }
 }
