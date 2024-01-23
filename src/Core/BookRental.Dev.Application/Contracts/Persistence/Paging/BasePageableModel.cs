@@ -1,4 +1,4 @@
-﻿namespace BookRental.Dev.Application.Contracts.Paging
+﻿namespace BookRental.Dev.Application.Contracts.Persistence.Paging
 {
     public class BasePageableModel
     {

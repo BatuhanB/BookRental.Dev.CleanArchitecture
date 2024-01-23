@@ -2,6 +2,7 @@ using Asp.Versioning;
 using BookRental.Dev.Application;
 using BookRental.Dev.Application.Middleware;
 using BookRental.Dev.Infrastructure;
+using BookRental.Dev.WebApi.Extensions;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +33,11 @@ builder.Host
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.ApplyMigrations();
+}
 
 app.UseExceptionHandler(_ => { });
 

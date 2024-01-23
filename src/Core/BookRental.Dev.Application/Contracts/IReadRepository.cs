@@ -1,7 +1,7 @@
-﻿using BookRental.Dev.Application.Contracts.Paging;
+﻿using System.Linq.Expressions;
+using BookRental.Dev.Application.Contracts.Persistence.Paging;
 using BookRental.Dev.Domain.Common;
 using Microsoft.EntityFrameworkCore.Query;
-using System.Linq.Expressions;
 
 namespace BookRental.Dev.Application.Contracts
 {
