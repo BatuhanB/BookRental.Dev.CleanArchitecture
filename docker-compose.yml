@@ -1,11 +1,32 @@
-version: "3.8"
+﻿version: '3.4'
 
 services:
-  api:
+  bookrental.dev.api:
+    image: ${DOCKER_REGISTRY-}bookrentaldevapi
+    container_name: bookrental-dev-api
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: bookrental
-    restart: always
+      dockerfile: src/External/BookRental.Dev.WebApi/Dockerfile
     ports:
-      - "5000:8080"
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5000
+      - ASPNETCORE_HTTPS_PORTS=5001
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+  bookrental.dev.database:
+    image: postgres:latest
+    container_name: bookrental-db
+    environment:
+      POSTGRES_DB: bookrentaldev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:

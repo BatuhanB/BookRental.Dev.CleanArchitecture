@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BookRental.Dev.Application.Contracts.Paging
+namespace BookRental.Dev.Application.Contracts.Persistence.Paging
 {
     public static class IQueryablePaginateExtensions
     {

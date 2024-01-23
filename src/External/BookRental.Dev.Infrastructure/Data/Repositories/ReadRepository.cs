@@ -1,11 +1,10 @@
-﻿using BookRental.Dev.Application.Contracts;
+﻿using System.Linq.Expressions;
+using BookRental.Dev.Application.Contracts;
 using BookRental.Dev.Application.Contracts.Dynamic;
-using BookRental.Dev.Application.Contracts.Paging;
+using BookRental.Dev.Application.Contracts.Persistence.Paging;
 using BookRental.Dev.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using System.Linq.Expressions;
-
 
 namespace BookRental.Dev.Infrastructure.Data.Repositories
 {
