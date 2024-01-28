@@ -17,9 +17,12 @@ namespace BookRental.Dev.WebApi.Controllers
         }
         
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(int page,int pageSize)
         {
-            var getAllBookQuery = new GetAllBookQuery();
+            var getAllBookQuery = new GetAllBookQuery
+            {
+                PageRequest = new(page, pageSize)
+            };
             return Ok(await Mediator.Send(getAllBookQuery));
         }
 

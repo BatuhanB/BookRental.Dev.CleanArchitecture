@@ -2,8 +2,7 @@
 
 namespace BookRental.Dev.Application.Features.Book.Queries.GetAll;
 
-public sealed class GetAllBooksListVm
-    : BasePageableModel
+public sealed class GetAllBooksListVm : BasePageableModel
 {
     public IList<GetBookVm>? Items { get; set; }
 };

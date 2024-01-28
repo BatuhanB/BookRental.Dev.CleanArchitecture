@@ -36,7 +36,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.ApplyMigrations();
+    app.ApplyMigration();
 }
 
 app.UseExceptionHandler(_ => { });

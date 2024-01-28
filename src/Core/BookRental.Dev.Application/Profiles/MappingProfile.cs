@@ -13,6 +13,7 @@ namespace BookRental.Dev.Application.Profiles
         {
             CreateMap<Book, BookByIdVm>().ReverseMap();
             CreateMap<IPaginate<Book>, GetAllBooksListVm>().ReverseMap();
+            CreateMap<Book, GetBookVm>().ReverseMap();
             CreateMap<Book, CreateBookCommand>().ReverseMap();
         }
     }
