@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookRental.Dev.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240102084522_inital-mig")]
-    partial class initalmig
+    [Migration("20240128164945_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,43 +50,22 @@ namespace BookRental.Dev.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("text");
 
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("bfbfc67b-05bb-4409-bdf4-7bb945eb2ca6"),
-                            Age = 45,
-                            CreateDate = new DateTime(2024, 1, 2, 11, 45, 22, 619, DateTimeKind.Local).AddTicks(6989),
-                            FirstName = "Author1 FirstName",
-                            LastName = "Author1 LastName",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("1333fa6e-bdaa-4a16-a532-4f7671b961cf"),
-                            Age = 65,
-                            CreateDate = new DateTime(2024, 1, 2, 11, 45, 22, 619, DateTimeKind.Local).AddTicks(7008),
-                            FirstName = "Author2 FirstName",
-                            LastName = "Author2 LastName",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("BookRental.Dev.Domain.Entities.Book", b =>
@@ -95,16 +74,15 @@ namespace BookRental.Dev.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("AuthorId")
+                    b.Property<Guid?>("AuthorId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("text");
 
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
@@ -116,7 +94,7 @@ namespace BookRental.Dev.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
@@ -132,42 +110,22 @@ namespace BookRental.Dev.Infrastructure.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                        .HasColumnType("text");
 
                     b.Property<string>("PublisherSpecId")
                         .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("character varying(13)");
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
                     b.ToTable("Publishers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("5062fa98-70c3-4271-a8b5-8b4357d55c2c"),
-                            CreateDate = new DateTime(2024, 1, 2, 11, 45, 22, 619, DateTimeKind.Local).AddTicks(7128),
-                            Name = "Publisher1",
-                            PublisherSpecId = "1k8g6Hf0ad9Z4",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = new Guid("959e4999-3845-46e6-938c-b6472362785f"),
-                            CreateDate = new DateTime(2024, 1, 2, 11, 45, 22, 619, DateTimeKind.Local).AddTicks(7131),
-                            Name = "Publisher2",
-                            PublisherSpecId = "L9jf71jfyh9F9",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("BookPublisher", b =>
@@ -189,9 +147,7 @@ namespace BookRental.Dev.Infrastructure.Migrations
                 {
                     b.HasOne("BookRental.Dev.Domain.Entities.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
                     b.Navigation("Author");
                 });

@@ -14,7 +14,8 @@ public static class DependencyResolver
     public static IServiceCollection AddInfrastructureDependency(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
+            server=>server.MigrationsAssembly("BookRental.Dev.Infrastructure")));
 
         services.AddScoped<IReadRepository<Book>, ReadRepository<Book, AppDbContext>>();
         services.AddScoped<IWriteRepository<Book>, WriteRepository<Book, AppDbContext>>();

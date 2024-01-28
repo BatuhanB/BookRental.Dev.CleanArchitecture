@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\BookRental.Dev.Application\BookRental.Dev.Application.csproj" />
     <ProjectReference Include="..\..\Core\BookRental.Dev.Domain\BookRental.Dev.Domain.csproj" />
   </ItemGroup>
