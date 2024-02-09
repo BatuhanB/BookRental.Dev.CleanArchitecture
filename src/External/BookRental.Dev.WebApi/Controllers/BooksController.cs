@@ -1,4 +1,5 @@
 ﻿using BookRental.Dev.Application.Features.Book.Command.Create;
+using BookRental.Dev.Application.Features.Book.Command.Update;
 using BookRental.Dev.Application.Features.Book.Queries.GetAll;
 using BookRental.Dev.Application.Features.Book.Queries.GetBookById;
 using BookRental.Dev.WebApi.Controllers.Base;
@@ -32,6 +33,14 @@ namespace BookRental.Dev.WebApi.Controllers
             [FromBody] CreateBookCommand createBookCommand)
         {
             var response = await Mediator.Send(createBookCommand);
+            return Ok(response);
+        } 
+
+        [HttpPut]
+        public async Task<ActionResult<UpdateBookCommandResponse>> Update(
+            [FromBody] UpdateBookCommand updateBookCommand)
+        {
+            var response = await Mediator.Send(updateBookCommand);
             return Ok(response);
         } 
     }

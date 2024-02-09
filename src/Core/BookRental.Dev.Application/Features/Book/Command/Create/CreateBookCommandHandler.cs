@@ -1,4 +1,3 @@
-using AutoMapper;
 using BookRental.Dev.Application.Contracts.Persistence.Book;
 using MediatR;
 
@@ -6,12 +5,9 @@ namespace BookRental.Dev.Application.Features.Book.Command.Create;
 
 public class CreateBookCommandHandler(
     IBookWriteRepository writeRepository,
-    IMapper mapper,
     IBookReadRepository readRepository)
     : IRequestHandler<CreateBookCommand, CreateBookCommandResponse>
 {
-    private readonly IMapper _mapper = mapper;
-
     public async Task<CreateBookCommandResponse> Handle(CreateBookCommand request, CancellationToken cancellationToken)
     {
         var createBookCommandResponse = new CreateBookCommandResponse();
@@ -35,7 +31,7 @@ public class CreateBookCommandHandler(
             {
                 Name = request.Name,
                 Price = request.Price,
-                PublishDate = DateTime.Today,
+                PublishDate = DateTime.Now,
                 Stock = request.Stock
             };
             book = await writeRepository.AddAsync(book);

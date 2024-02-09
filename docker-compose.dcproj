@@ -4,9 +4,12 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>280221d7-fc42-4af4-8ad2-84541e7ade31</ProjectGuid>
+    <ProjectGuid>5bd848d3-cb80-4d1b-bbf3-c0cdfd124f8f</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
     <None Include="docker-compose.yml" />
     <None Include=".dockerignore" />
   </ItemGroup>
